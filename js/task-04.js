@@ -11,19 +11,19 @@
 Обновляй интерфейс новым значением переменной counterValue. */
 
 const button = document.querySelectorAll(["button"]);
-/* console.log(button); */
 
-const counterValue = document.querySelector("#value");
-/* console.log(counterValue); */
+const refValue = document.querySelector("#value");
+
+let counterValue = 0;
 
 const handleClickUp = (event) => {
-  const num = counterValue.textContent;
-  counterValue.textContent = Number(num) + 1;
+  counterValue += 1;
+  refValue.textContent = counterValue;
 };
 
 const handleClickDown = (event) => {
-  const num = counterValue.textContent;
-  counterValue.textContent = Number(num) - 1;
+  counterValue -= 1;
+  refValue.textContent = counterValue;
 };
 button[1].addEventListener("click", handleClickUp);
 button[0].addEventListener("click", handleClickDown);
